@@ -1,0 +1,13 @@
+- item_class = (todo_item.done ? "done" : "outstanding")
+- item_id = 'todo_item_' + todo_item.id.to_s
+- check_action = :undo if todo_item.done
+- check_action ||= :done
+
+%li{ :id => item_id }
+	- form_remote_for :todo_item do |f|
+		= f.check_box :done
+		= f.hidden_field :id
+		%span{ :class => item_class }
+			= todo_item.title
+		= link_to "[Delete]", todo_item, :method => :delete, :confirm => "Are you sure you want to delete this item?"
+		= observe_field :todo_item_done, :url => { :action => check_action, :id => todo_item.id, :done => todo_item.done }

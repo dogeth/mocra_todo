@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :todo_items, :member => {
-  		:done => :put, 
-  		:undo => :put
+  		:done => :post, 
+  		:undo => :post
   	}
 
   map.root :controller => "todo_items", :action => "index"

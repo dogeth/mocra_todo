@@ -1,0 +1,9 @@
+%html
+	%head
+		%title ToDo
+		= stylesheet_link_tag 'application'
+		= javascript_include_tag :defaults 
+	%body
+		#container
+			%p#notice= flash[:notice]
+			= yield

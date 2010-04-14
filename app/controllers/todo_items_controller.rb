@@ -33,6 +33,9 @@ class TodoItemsController < ApplicationController
 			@todo_item = TodoItem.find( params[ :id ] )
 			yield
 			@todo_item.save!
-			redirect_to root_path
+			respond_to do |format|
+				format.html { redirect_to root_path }
+				format.js
+			end			
 		end
 end
