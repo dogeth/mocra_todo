@@ -1,0 +1,12 @@
+<h1>Todo</h1>
+
+<p>
+<% form_for :todo_item, @todoItem, :url => { :action => "create" } do |f| %>
+  <%= f.text_field :title %>
+  <%= submit_tag 'Add' %>
+<% end %>
+</p>
+
+<ul class="items">
+<%= render @todoItems %>
+</ul>

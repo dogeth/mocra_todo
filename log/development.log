@@ -1,0 +1,422 @@
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-15 19:16:42) [GET]
+
+NameError (uninitialized constant TodoController):
+  
+
+Rendered rescues/_trace (387.0ms)
+Rendered rescues/_request_and_response (10.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-15 19:17:04) [GET]
+
+NameError (uninitialized constant TodoitemsController):
+  
+
+Rendered rescues/_trace (149.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (139.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (207.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTodoItems (20100415091134)
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCREATE TABLE "todo_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "done" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100415091134')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("todo_items")[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-15 19:18:09) [GET]
+
+NameError (uninitialized constant TodoitemsController):
+  
+
+Rendered rescues/_trace (126.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-15 19:19:15) [GET]
+
+NameError (uninitialized constant TodoitemsController):
+  
+
+Rendered rescues/_trace (138.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:19:27) [GET]
+Rendering template within layouts/application
+Rendering todo_items/index
+Completed in 69ms (View: 62, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:23:06) [GET]
+
+NameError (uninitialized constant TodoItemsController::TodoItems):
+  app/controllers/todo_items_controller.rb:3:in `index'
+
+Rendered rescues/_trace (150.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:23:15) [GET]
+  [4;36;1mTodoItem Load (1.0ms)[0m   [0;1mSELECT * FROM "todo_items" [0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Completed in 1323ms (View: 1258, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:23:28) [POST]
+  Parameters: {"authenticity_token"=>"nxcTG+XvI0oM8XH5nIIeN7/5q3kfJ2500z/EcoU9ctc=", "todoItem"=>{"title"=>"Get things working to begin with"}}
+  [4;35;1mTodoItem Load (1.0ms)[0m   [0mSELECT * FROM "todo_items" [0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Completed in 77ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:24:13) [POST]
+  Parameters: {"authenticity_token"=>"nxcTG+XvI0oM8XH5nIIeN7/5q3kfJ2500z/EcoU9ctc=", "todoItem"=>{"title"=>"Get things working to begin with"}}
+  [4;36;1mTodoItem Load (1.0ms)[0m   [0;1mSELECT * FROM "todo_items" [0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Completed in 268ms (View: 42, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:26:14) [GET]
+  [4;35;1mTodoItem Load (1.0ms)[0m   [0mSELECT * FROM "todo_items" [0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Completed in 103ms (View: 40, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-15 19:26:21) [POST]
+  Parameters: {"commit"=>"Add", "authenticity_token"=>"nxcTG+XvI0oM8XH5nIIeN7/5q3kfJ2500z/EcoU9ctc=", "todoItem"=>{"title"=>"Buy a goat"}}
+
+ActionController::RoutingError (No route matches "/todoitems/create" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:27:00) [GET]
+  [4;36;1mTodoItem Load (1.0ms)[0m   [0;1mSELECT * FROM "todo_items" [0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Completed in 104ms (View: 41, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-15 19:27:05) [POST]
+  Parameters: {"todo_item"=>{"title"=>"Buy a goat"}, "commit"=>"Add", "authenticity_token"=>"nxcTG+XvI0oM8XH5nIIeN7/5q3kfJ2500z/EcoU9ctc="}
+
+ActionController::RoutingError (No route matches "/todoitems/create" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:27:12) [GET]
+  [4;35;1mTodoItem Load (1.0ms)[0m   [0mSELECT * FROM "todo_items" [0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Completed in 92ms (View: 23, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:27:49) [GET]
+  [4;36;1mTodoItem Load (1.0ms)[0m   [0;1mSELECT * FROM "todo_items" [0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Completed in 106ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:27:56) [GET]
+  [4;35;1mTodoItem Load (0.0ms)[0m   [0mSELECT * FROM "todo_items" [0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Completed in 79ms (View: 19, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#create (for 127.0.0.1 at 2010-04-15 19:29:18) [POST]
+  Parameters: {"todo_item"=>{"title"=>"Buy a goat"}, "commit"=>"Add", "authenticity_token"=>"nxcTG+XvI0oM8XH5nIIeN7/5q3kfJ2500z/EcoU9ctc="}
+  [4;36;1mTodoItem Create (7.0ms)[0m   [0;1mINSERT INTO "todo_items" ("created_at", "title", "updated_at", "done") VALUES('2010-04-15 09:29:18', NULL, '2010-04-15 09:29:18', NULL)[0m
+
+NameError (undefined local variable or method `todoitems_path' for #<TodoItemsController:0x7f11824c>):
+  app/controllers/todo_items_controller.rb:9:in `create'
+
+Rendered rescues/_trace (218.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:29:36) [GET]
+  [4;35;1mTodoItem Load (6.0ms)[0m   [0mSELECT * FROM "todo_items" [0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Completed in 77ms (View: 17, DB: 6) | 200 OK [http://localhost/todo_items]
+
+
+Processing TodoItemsController#create (for 127.0.0.1 at 2010-04-15 19:29:52) [POST]
+  Parameters: {"todo_item"=>{"title"=>"Buy a goat"}, "commit"=>"Add", "authenticity_token"=>"nxcTG+XvI0oM8XH5nIIeN7/5q3kfJ2500z/EcoU9ctc="}
+  [4;36;1mTodoItem Create (6.0ms)[0m   [0;1mINSERT INTO "todo_items" ("created_at", "title", "updated_at", "done") VALUES('2010-04-15 09:29:52', NULL, '2010-04-15 09:29:52', NULL)[0m
+Redirected to http://localhost:3000/todo_items
+Completed in 249ms (DB: 6) | 302 Found [http://localhost/todo_items]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:29:54) [GET]
+  [4;35;1mTodoItem Load (2.0ms)[0m   [0mSELECT * FROM "todo_items" [0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Completed in 81ms (View: 19, DB: 2) | 200 OK [http://localhost/todo_items]
+
+
+Processing TodoItemsController#create (for 127.0.0.1 at 2010-04-15 19:30:50) [POST]
+  Parameters: {"todo_item"=>{"title"=>"Clear out the broken items"}, "commit"=>"Add", "authenticity_token"=>"nxcTG+XvI0oM8XH5nIIeN7/5q3kfJ2500z/EcoU9ctc="}
+  [4;36;1mTodoItem Create (5.0ms)[0m   [0;1mINSERT INTO "todo_items" ("created_at", "title", "updated_at", "done") VALUES('2010-04-15 09:30:50', 'Clear out the broken items', '2010-04-15 09:30:50', NULL)[0m
+Redirected to http://localhost:3000/todo_items
+Completed in 254ms (DB: 5) | 302 Found [http://localhost/todo_items]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:30:52) [GET]
+  [4;35;1mTodoItem Load (3.0ms)[0m   [0mSELECT * FROM "todo_items" [0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Completed in 86ms (View: 20, DB: 3) | 200 OK [http://localhost/todo_items]
+
+
+Processing TodoItemsController#create (for 127.0.0.1 at 2010-04-15 19:31:36) [POST]
+  Parameters: {"todo_item"=>{"title"=>"Add done concept"}, "commit"=>"Add", "authenticity_token"=>"nxcTG+XvI0oM8XH5nIIeN7/5q3kfJ2500z/EcoU9ctc="}
+  [4;36;1mTodoItem Create (18.0ms)[0m   [0;1mINSERT INTO "todo_items" ("created_at", "title", "updated_at", "done") VALUES('2010-04-15 09:31:36', 'Add done concept', '2010-04-15 09:31:36', 'f')[0m
+Redirected to http://localhost:3000/todo_items
+Completed in 298ms (DB: 18) | 302 Found [http://localhost/todo_items]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:31:38) [GET]
+  [4;35;1mTodoItem Load (2.0ms)[0m   [0mSELECT * FROM "todo_items" [0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Completed in 98ms (View: 24, DB: 2) | 200 OK [http://localhost/todo_items]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:33:28) [GET]
+  [4;36;1mTodoItem Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: created_on: SELECT * FROM "todo_items" ORDER BY created_on desc[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: created_on: SELECT * FROM "todo_items"  ORDER BY created_on desc):
+  app/controllers/todo_items_controller.rb:4:in `index'
+
+Rendered rescues/_trace (185.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:33:38) [GET]
+  [4;35;1mTodoItem Load (34.0ms)[0m   [0mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Completed in 110ms (View: 21, DB: 34) | 200 OK [http://localhost/todo_items]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:36:27) [GET]
+  [4;36;1mTodoItem Load (2.0ms)[0m   [0;1mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Completed in 99ms (View: 34, DB: 2) | 200 OK [http://localhost/todo_items]
+
+
+Processing TodoItemsController#create (for 127.0.0.1 at 2010-04-15 19:36:33) [POST]
+  Parameters: {"todo_item"=>{"title"=>"Buy cheese"}, "commit"=>"Add", "authenticity_token"=>"nxcTG+XvI0oM8XH5nIIeN7/5q3kfJ2500z/EcoU9ctc="}
+  [4;35;1mTodoItem Create (6.0ms)[0m   [0mINSERT INTO "todo_items" ("created_at", "title", "updated_at", "done") VALUES('2010-04-15 09:36:33', 'Buy cheese', '2010-04-15 09:36:33', 'f')[0m
+Redirected to http://localhost:3000/
+Completed in 258ms (DB: 6) | 302 Found [http://localhost/todo_items]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:36:35) [GET]
+  [4;36;1mTodoItem Load (2.0ms)[0m   [0;1mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Completed in 92ms (View: 24, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#create (for 127.0.0.1 at 2010-04-15 19:38:26) [POST]
+  Parameters: {"todo_item"=>{"title"=>""}, "commit"=>"Add", "authenticity_token"=>"nxcTG+XvI0oM8XH5nIIeN7/5q3kfJ2500z/EcoU9ctc="}
+  [4;35;1mTodoItem Load (3.0ms)[0m   [0mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Completed in 286ms (View: 213, DB: 3) | 200 OK [http://localhost/todo_items]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:39:55) [GET]
+  [4;36;1mTodoItem Load (4.0ms)[0m   [0;1mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+
+ActionView::TemplateError (undefined local variable or method `i' for #<ActionView::Base:0x7f3190dc>) on line #1 of app/views/todo_items/_todo_item.html.erb:
+1: <li><%= i.title %></li>
+
+    app/views/todo_items/_todo_item.html.erb:1
+    app/views/todo_items/index.html.erb:11
+
+Rendered rescues/_trace (231.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:40:17) [GET]
+  [4;35;1mTodoItem Load (2.0ms)[0m   [0mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+
+ActionView::TemplateError (undefined method `title' for nil:NilClass) on line #1 of app/views/todo_items/_todo_item.html.erb:
+1: <li><%= @todo_item.title %></li>
+
+    app/views/todo_items/_todo_item.html.erb:1
+    app/views/todo_items/index.html.erb:11
+
+Rendered rescues/_trace (404.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:41:12) [GET]
+  [4;36;1mTodoItem Load (2.0ms)[0m   [0;1mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Rendered todo_items/_todo_item (4.0ms)
+Rendered todo_items/_todo_item (1.0ms)
+Rendered todo_items/_todo_item (1.0ms)
+Rendered todo_items/_todo_item (0.0ms)
+Rendered todo_items/_todo_item (0.0ms)
+Completed in 110ms (View: 48, DB: 2) | 200 OK [http://localhost/todo_items]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:42:41) [GET]
+  [4;35;1mTodoItem Load (3.0ms)[0m   [0mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Rendered todo_items/_todo_item (5.0ms)
+Rendered todo_items/_todo_item (1.0ms)
+Rendered todo_items/_todo_item (0.0ms)
+Rendered todo_items/_todo_item (1.0ms)
+Rendered todo_items/_todo_item (0.0ms)
+Completed in 116ms (View: 49, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:43:08) [GET]
+  [4;36;1mTodoItem Load (2.0ms)[0m   [0;1mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Rendered todo_items/_todo_item (7.0ms)
+Rendered todo_items/_todo_item (2.0ms)
+Rendered todo_items/_todo_item (2.0ms)
+Rendered todo_items/_todo_item (1.0ms)
+Rendered todo_items/_todo_item (1.0ms)
+Completed in 122ms (View: 54, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#show (for 127.0.0.1 at 2010-04-15 19:43:12) [GET]
+  Parameters: {"id"=>"destroy"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create and index):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:45:21) [GET]
+  [4;35;1mTodoItem Load (3.0ms)[0m   [0mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Rendered todo_items/_todo_item (11.0ms)
+Rendered todo_items/_todo_item (13.0ms)
+Rendered todo_items/_todo_item (12.0ms)
+Rendered todo_items/_todo_item (9.0ms)
+Rendered todo_items/_todo_item (11.0ms)
+Completed in 170ms (View: 103, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#destroy (for 127.0.0.1 at 2010-04-15 19:45:28) [DELETE]
+  Parameters: {"authenticity_token"=>"nxcTG+XvI0oM8XH5nIIeN7/5q3kfJ2500z/EcoU9ctc=", "id"=>"1"}
+  [4;36;1mTodoItem Delete all (163.0ms)[0m   [0;1mDELETE FROM "todo_items" WHERE ("id" IN ('1')) [0m
+
+ActionView::MissingTemplate (Missing template todo_items/destroy.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:45:48) [GET]
+  [4;35;1mTodoItem Load (3.0ms)[0m   [0mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Rendered todo_items/_todo_item (12.0ms)
+Rendered todo_items/_todo_item (12.0ms)
+Rendered todo_items/_todo_item (8.0ms)
+Rendered todo_items/_todo_item (12.0ms)
+Completed in 136ms (View: 71, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#destroy (for 127.0.0.1 at 2010-04-15 19:45:53) [DELETE]
+  Parameters: {"authenticity_token"=>"nxcTG+XvI0oM8XH5nIIeN7/5q3kfJ2500z/EcoU9ctc=", "id"=>"2"}
+  [4;36;1mTodoItem Delete all (208.0ms)[0m   [0;1mDELETE FROM "todo_items" WHERE ("id" IN ('2')) [0m
+Redirected to http://localhost:3000/
+Completed in 267ms (DB: 208) | 302 Found [http://localhost/todo_items/2]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:45:55) [GET]
+  [4;35;1mTodoItem Load (2.0ms)[0m   [0mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Rendered todo_items/_todo_item (7.0ms)
+Rendered todo_items/_todo_item (12.0ms)
+Rendered todo_items/_todo_item (203.0ms)
+Completed in 318ms (View: 251, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:48:57) [GET]
+  [4;36;1mTodoItem Load (2.0ms)[0m   [0;1mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Rendered todo_items/_todo_item (16.0ms)
+Rendered todo_items/_todo_item (11.0ms)
+Rendered todo_items/_todo_item (11.0ms)
+Completed in 157ms (View: 95, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:54:39) [GET]
+  [4;35;1mTodoItem Load (2.0ms)[0m   [0mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Rendered todo_items/_todo_item (17.0ms)
+Rendered todo_items/_todo_item (11.0ms)
+Rendered todo_items/_todo_item (13.0ms)
+Completed in 153ms (View: 93, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 19:54:57) [GET]
+  [4;36;1mTodoItem Load (1.0ms)[0m   [0;1mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Rendered todo_items/_todo_item (13.0ms)
+Rendered todo_items/_todo_item (13.0ms)
+Rendered todo_items/_todo_item (10.0ms)
+Completed in 135ms (View: 77, DB: 1) | 200 OK [http://localhost/]
