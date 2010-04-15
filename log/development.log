@@ -1136,3 +1136,209 @@ Rendered todo_items/_todo_item (27.0ms)
 Rendered todo_items/_todo_item (24.0ms)
 Rendered todo_items/_todo_item (23.0ms)
 Completed in 182ms (View: 109, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 20:56:13) [GET]
+  [4;36;1mTodoItem Load (2.0ms)[0m   [0;1mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Rendered todo_items/_todo_item (19.0ms)
+Rendered todo_items/_todo_item (19.0ms)
+Rendered todo_items/_todo_item (19.0ms)
+Completed in 148ms (View: 86, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#done (for 127.0.0.1 at 2010-04-15 21:01:15) [PUT]
+  Parameters: {"authenticity_token"=>"nxcTG+XvI0oM8XH5nIIeN7/5q3kfJ2500z/EcoU9ctc=", "id"=>"4"}
+  [4;35;1mTodoItem Load (1.0ms)[0m   [0mSELECT * FROM "todo_items" WHERE ("todo_items"."id" = 4) [0m
+  [4;36;1mTodoItem Update (6.0ms)[0m   [0;1mUPDATE "todo_items" SET "updated_at" = '2010-04-15 11:01:15', "done" = 't' WHERE "id" = 4[0m
+Redirected to http://localhost:3000/
+Completed in 269ms (DB: 7) | 302 Found [http://localhost/todo_items/4/done]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 21:01:17) [GET]
+  [4;35;1mTodoItem Load (3.0ms)[0m   [0mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Rendered todo_items/_todo_item (23.0ms)
+Rendered todo_items/_todo_item (24.0ms)
+Rendered todo_items/_todo_item (22.0ms)
+Completed in 167ms (View: 100, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 21:03:35) [GET]
+  [4;36;1mTodoItem Load (2.0ms)[0m   [0;1mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Rendered todo_items/_todo_item (29.0ms)
+Rendered todo_items/_todo_item (26.0ms)
+Rendered todo_items/_todo_item (26.0ms)
+Completed in 179ms (View: 121, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 21:03:41) [GET]
+  [4;35;1mTodoItem Load (2.0ms)[0m   [0mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Rendered todo_items/_todo_item (26.0ms)
+Rendered todo_items/_todo_item (23.0ms)
+Rendered todo_items/_todo_item (26.0ms)
+Completed in 157ms (View: 100, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 21:03:53) [GET]
+  [4;36;1mTodoItem Load (2.0ms)[0m   [0;1mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Rendered todo_items/_todo_item (30.0ms)
+Rendered todo_items/_todo_item (25.0ms)
+Rendered todo_items/_todo_item (24.0ms)
+Completed in 178ms (View: 119, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 21:04:09) [GET]
+  [4;35;1mTodoItem Load (2.0ms)[0m   [0mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Rendered todo_items/_todo_item (28.0ms)
+Rendered todo_items/_todo_item (24.0ms)
+Rendered todo_items/_todo_item (23.0ms)
+Completed in 171ms (View: 114, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 21:04:19) [GET]
+  [4;36;1mTodoItem Load (2.0ms)[0m   [0;1mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Rendered todo_items/_todo_item (27.0ms)
+Rendered todo_items/_todo_item (23.0ms)
+Rendered todo_items/_todo_item (19.0ms)
+Completed in 163ms (View: 106, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 21:04:59) [GET]
+  [4;35;1mTodoItem Load (1.0ms)[0m   [0mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+
+ActionView::TemplateError (undefined local variable or method `todo_ite' for #<ActionView::Base:0x7efc6128>) on line #6 of app/views/todo_items/_todo_item.html.erb:
+3: <%else%>
+4: <li class="outstanding">
+5: <%end%>
+6: 	<checkbox id="item<%= todo_ite.id %>_done" />
+7: 	<%= todo_item.title %> 
+8: 	<%= link_to "[Delete]", todo_item, :method => :delete, 
+9: 			:confirm => "Are you sure you want to delete this item?" %>	
+
+    app/views/todo_items/_todo_item.html.erb:6
+    app/views/todo_items/index.html.erb:11
+
+Rendered rescues/_trace (202.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 21:05:17) [GET]
+  [4;36;1mTodoItem Load (3.0ms)[0m   [0;1mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Rendered todo_items/_todo_item (25.0ms)
+Rendered todo_items/_todo_item (18.0ms)
+Rendered todo_items/_todo_item (20.0ms)
+Completed in 158ms (View: 101, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 21:06:16) [GET]
+  [4;35;1mTodoItem Load (2.0ms)[0m   [0mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Rendered todo_items/_todo_item (25.0ms)
+Rendered todo_items/_todo_item (20.0ms)
+Rendered todo_items/_todo_item (17.0ms)
+Completed in 158ms (View: 100, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 21:06:28) [GET]
+  [4;36;1mTodoItem Load (3.0ms)[0m   [0;1mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Rendered todo_items/_todo_item (23.0ms)
+Rendered todo_items/_todo_item (19.0ms)
+Rendered todo_items/_todo_item (18.0ms)
+Completed in 144ms (View: 86, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 21:06:35) [GET]
+  [4;35;1mTodoItem Load (2.0ms)[0m   [0mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Rendered todo_items/_todo_item (20.0ms)
+Rendered todo_items/_todo_item (17.0ms)
+Rendered todo_items/_todo_item (19.0ms)
+Completed in 135ms (View: 79, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 21:07:26) [GET]
+  [4;36;1mTodoItem Load (2.0ms)[0m   [0;1mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Rendered todo_items/_todo_item (25.0ms)
+Rendered todo_items/_todo_item (22.0ms)
+Rendered todo_items/_todo_item (24.0ms)
+Completed in 358ms (View: 296, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 21:07:38) [GET]
+  [4;35;1mTodoItem Load (2.0ms)[0m   [0mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Rendered todo_items/_todo_item (21.0ms)
+Rendered todo_items/_todo_item (20.0ms)
+Rendered todo_items/_todo_item (21.0ms)
+Completed in 152ms (View: 89, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 21:09:26) [GET]
+  [4;36;1mTodoItem Load (2.0ms)[0m   [0;1mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Rendered todo_items/_todo_item (26.0ms)
+Rendered todo_items/_todo_item (35.0ms)
+Rendered todo_items/_todo_item (20.0ms)
+Completed in 182ms (View: 117, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#undo (for 127.0.0.1 at 2010-04-15 21:09:30) [PUT]
+  Parameters: {"authenticity_token"=>"nxcTG+XvI0oM8XH5nIIeN7/5q3kfJ2500z/EcoU9ctc=", "id"=>"4"}
+  [4;35;1mTodoItem Load (1.0ms)[0m   [0mSELECT * FROM "todo_items" WHERE ("todo_items"."id" = 4) [0m
+  [4;36;1mTodoItem Update (4.0ms)[0m   [0;1mUPDATE "todo_items" SET "updated_at" = '2010-04-15 11:09:30', "done" = 'f' WHERE "id" = 4[0m
+Redirected to http://localhost:3000/
+Completed in 292ms (DB: 5) | 302 Found [http://localhost/todo_items/4/undo]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 21:09:32) [GET]
+  [4;35;1mTodoItem Load (1.0ms)[0m   [0mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Rendered todo_items/_todo_item (20.0ms)
+Rendered todo_items/_todo_item (19.0ms)
+Rendered todo_items/_todo_item (23.0ms)
+Completed in 148ms (View: 90, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#done (for 127.0.0.1 at 2010-04-15 21:10:05) [PUT]
+  Parameters: {"authenticity_token"=>"nxcTG+XvI0oM8XH5nIIeN7/5q3kfJ2500z/EcoU9ctc=", "id"=>"4"}
+  [4;36;1mTodoItem Load (2.0ms)[0m   [0;1mSELECT * FROM "todo_items" WHERE ("todo_items"."id" = 4) [0m
+  [4;35;1mTodoItem Update (4.0ms)[0m   [0mUPDATE "todo_items" SET "updated_at" = '2010-04-15 11:10:05', "done" = 't' WHERE "id" = 4[0m
+Redirected to http://localhost:3000/
+Completed in 220ms (DB: 6) | 302 Found [http://localhost/todo_items/4/done]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-15 21:10:07) [GET]
+  [4;36;1mTodoItem Load (1.0ms)[0m   [0;1mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+Rendered todo_items/_todo_item (24.0ms)
+Rendered todo_items/_todo_item (19.0ms)
+Rendered todo_items/_todo_item (24.0ms)
+Completed in 148ms (View: 92, DB: 1) | 200 OK [http://localhost/]

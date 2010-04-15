@@ -1,6 +1,4 @@
 class TodoItemsController < ApplicationController
-	before_filter :find_item, :only => [:done, :undo]
-	
 	def index
 		@todoItem = TodoItem.new
 		@todoItems = TodoItem.all( :order => "created_at desc" )
@@ -23,22 +21,17 @@ class TodoItemsController < ApplicationController
 	end
 	
 	def done
-		@todo_item.done = true
-		save_item
+		update_item{ @todo_item.done = true }
 	end
 	
 	def undo
-		@todo_item.done = false
-		save_item
+		update_item{ @todo_item.done = false }
 	end
-	
+
 	private
-		def find_item
+		def update_item
 			@todo_item = TodoItem.find( params[ :id ] )
-		end
-		
-	private
-		def save_item
+			yield
 			@todo_item.save!
 			redirect_to root_path
 		end
