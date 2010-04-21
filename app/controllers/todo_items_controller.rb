@@ -1,11 +1,21 @@
 class TodoItemsController < ApplicationController
 	def index
-		@todoItem = TodoItem.new
-		@todoItems = TodoItem.all( :order => "created_at desc" )
+		if params[:tags]
+			@tag = Tag.find_by_name( params[ :tags ] )
+			@todoItems = @tag.todo_items
+		else
+			@todoItems = TodoItem.all( :order => "created_at desc" )
+		end
+		@TodoItem = TodoItem.new
 	end
 	
 	def create
 		@todoItem = TodoItem.new( params[ :todo_item ] )
+		if params[ :tag ]			
+			@tag = Tag.find( params[ :tag ] )
+			@todoItem << @tag
+		end
+			
 		@todoItem.done = false
 		if @todoItem.save!
 			redirect_to root_path
@@ -18,6 +28,11 @@ class TodoItemsController < ApplicationController
 	def destroy
 		TodoItem.destroy params[ :id ] 
 		redirect_to root_path
+	end
+
+	def show
+		@todo_item = TodoItem.find( params[ :id ] )
+		@todo_item_tag = TodoItemTag.new( :tag_id => @todo_item.id)
 	end
 	
 	def done
