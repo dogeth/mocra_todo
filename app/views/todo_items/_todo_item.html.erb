@@ -12,4 +12,5 @@
 	<% else %>
 		<%= link_to "[Done]", done_todo_item_path(todo_item), :method => :put %>
 	<% end %>
+	<%= todo_item.tags.map { |tag| link_to(tag.name, root_path(:tags => tag.name)) }.join( ', ' ) %>
 </li>

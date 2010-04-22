@@ -1373,3 +1373,314 @@ Migrating to CreateTodoItemTags (20100422094101)
   [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_info('index_todo_item_tags_on_todo_item_id')[0m
   [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_info('index_todo_item_tags_on_tag_id')[0m
   [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("todo_items")[0m
+  [4;36;1mTag Create (0.0ms)[0m   [0;1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES('Rails', '2010-04-22 09:50:05', '2010-04-22 09:50:05')[0m
+  [4;35;1mTag Create (16.0ms)[0m   [0mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES('Ruby', '2010-04-22 09:50:14', '2010-04-22 09:50:14')[0m
+  [4;36;1mTag Create (15.0ms)[0m   [0;1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES('JavaScript', '2010-04-22 09:50:23', '2010-04-22 09:50:23')[0m
+  [4;35;1mTag Create (0.0ms)[0m   [0mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES('PHP', '2010-04-22 09:50:32', '2010-04-22 09:50:32')[0m
+  [4;36;1mTodoItem Load (0.0ms)[0m   [0;1mSELECT * FROM "todo_items" LIMIT 1[0m
+  [4;35;1mTodoItem Load (0.0ms)[0m   [0mSELECT * FROM "todo_items" LIMIT 1[0m
+  [4;36;1mTodoItem Load (0.0ms)[0m   [0;1mSELECT * FROM "todo_items" LIMIT 1[0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 3)) [0m
+  [4;36;1mTag Create (16.0ms)[0m   [0;1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES('Ruby', '2010-04-22 09:53:51', '2010-04-22 09:53:51')[0m
+  [4;35;1mTodoItemTag Create (0.0ms)[0m   [0mINSERT INTO "todo_item_tags" ("created_at", "tag_id", "updated_at", "todo_item_id") VALUES('2010-04-22 09:53:51', 5, '2010-04-22 09:53:51', 3)[0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT * FROM "tags" [0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT * FROM "tags" [0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT * FROM "tags" WHERE ("tags"."name" = 'Ruby') LIMIT 1[0m
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-22 20:13:34) [GET]
+  [4;36;1mTodoItem Load (0.0ms)[0m   [0;1mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+ERROR: compiling _run_erb_app47views47todo_items47_todo_item46html46erb_locals_object_todo_item_todo_item_counter RAISED compile error
+/cygdrive/c/Users/Gareth/sites/todo/app/views/todo_items/_todo_item.html.erb:15: syntax error, unexpected ';'
+;  todo_item.tags.each |t| ; @output_buffer.concat "\r\n\t- "
+                            ^
+/cygdrive/c/Users/Gareth/sites/todo/app/views/todo_items/_todo_item.html.erb:20: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_erb_app47views47todo_items47_todo_item46html46erb_locals_object_todo_item_todo_item_counter(local_assigns)
+            old_output_buffer = output_buffer;todo_item = local_assigns[:todo_item];object = local_assigns[:object];todo_item_counter = local_assigns[:todo_item_counter];;@output_buffer = '';  __in_erb_template=true ;  if todo_item.done ; @output_buffer.concat "\r\n<li class=\"done\">\r\n"
+
+; else; @output_buffer.concat "\r\n<li class=\"outstanding\">\r\n"
+
+; end; @output_buffer.concat "\r\n\t<input type=\"checkbox\" id=\"item"
+; @output_buffer.concat(( todo_item.id ).to_s); @output_buffer.concat "_done\" "; @output_buffer.concat(( "checked" if todo_item.done? ).to_s); @output_buffer.concat "/>\r\n\t"
+; @output_buffer.concat(( todo_item.title ).to_s); @output_buffer.concat " \r\n\t"
+; @output_buffer.concat(( link_to "[Delete]", todo_item, :method => :delete, 
+			:confirm => "Are you sure you want to delete this item?" ).to_s); @output_buffer.concat "\t\r\n\t"
+;  if todo_item.done? ; @output_buffer.concat "\r\n\t\t"
+; @output_buffer.concat(( link_to "[Undo]", undo_todo_item_path(todo_item), :method => :put ).to_s); @output_buffer.concat "\r\n\t"
+;  else ; @output_buffer.concat "\r\n\t\t"
+; @output_buffer.concat(( link_to "[Done]", done_todo_item_path(todo_item), :method => :put ).to_s); @output_buffer.concat "\r\n\t"
+;  end ; @output_buffer.concat "\r\n\t"
+;  todo_item.tags.each |t| ; @output_buffer.concat "\r\n\t- "
+;  t.name ; @output_buffer.concat "\r\n\t"
+;  end ; @output_buffer.concat "\r\n</li>\r\n"
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /cygdrive/c/Users/Gareth/sites/todo/app/views/todo_items/_todo_item.html.erb:20:in `compile!'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:20:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:19:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/partials.rb:221:in `render_partial_collection'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/partials.rb:216:in `map'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/partials.rb:216:in `render_partial_collection'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/partials.rb:195:in `render_partial'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:276:in `render'
+/cygdrive/c/Users/Gareth/sites/todo/app/views/todo_items/index.html.erb:11:in `_run_erb_app47views47todo_items47index46html46erb'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:306:in `with_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:30:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/cygdrive/c/Users/Gareth/sites/todo/app/views/todo_items/_todo_item.html.erb:15: syntax error, unexpected ';'
+;  todo_item.tags.each |t| ; @output_buffer.concat "\r\n\t- "
+                            ^
+/cygdrive/c/Users/Gareth/sites/todo/app/views/todo_items/_todo_item.html.erb:20: syntax error, unexpected kENSURE, expecting $end) on line #15 of app/views/todo_items/_todo_item.html.erb:
+12: 	<% else %>
+13: 		<%= link_to "[Done]", done_todo_item_path(todo_item), :method => :put %>
+14: 	<% end %>
+15: 	<% todo_item.tags.each |t| %>
+16: 	- <% t.name %>
+17: 	<% end %>
+18: </li>
+
+    app/views/todo_items/_todo_item.html.erb:20:in `compile!'
+    app/views/todo_items/index.html.erb:11
+
+Rendered rescues/_trace (187.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-22 20:14:15) [GET]
+  [4;35;1mTodoItem Load (0.0ms)[0m   [0mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+  [4;36;1mTag Load (15.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 5)) [0m
+Rendered todo_items/_todo_item (218.0ms)
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 4)) [0m
+Rendered todo_items/_todo_item (16.0ms)
+  [4;36;1mTag Load (16.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 3)) [0m
+Rendered todo_items/_todo_item (31.0ms)
+Completed in 484ms (View: 390, DB: 31) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-22 20:15:01) [GET]
+  [4;35;1mTodoItem Load (0.0ms)[0m   [0mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 5)) [0m
+Rendered todo_items/_todo_item (156.0ms)
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 4)) [0m
+Rendered todo_items/_todo_item (31.0ms)
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 3)) [0m
+Rendered todo_items/_todo_item (47.0ms)
+Completed in 343ms (View: 281, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-22 20:22:00) [GET]
+  [4;35;1mTodoItem Load (16.0ms)[0m   [0mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+
+ActionView::TemplateError (undefined local variable or method `item' for #<ActionView::Base:0x7f181b98>) on line #15 of app/views/todo_items/_todo_item.html.erb:
+12: 	<% else %>
+13: 		<%= link_to "[Done]", done_todo_item_path(todo_item), :method => :put %>
+14: 	<% end %>
+15: 	<%= item.tags.map { |tag| link_to(tag.name, root_path(:tags => tag.name)) }.join( ', ' ) %>
+16: </li>
+
+    app/views/todo_items/_todo_item.html.erb:15
+    app/views/todo_items/index.html.erb:11
+
+Rendered rescues/_trace (328.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-22 20:22:11) [GET]
+  [4;36;1mTodoItem Load (0.0ms)[0m   [0;1mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 5)) [0m
+Rendered todo_items/_todo_item (109.0ms)
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 4)) [0m
+Rendered todo_items/_todo_item (16.0ms)
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 3)) [0m
+Rendered todo_items/_todo_item (31.0ms)
+Completed in 249ms (View: 187, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-22 20:22:19) [GET]
+  Parameters: {"tags"=>"Ruby"}
+  [4;36;1mTodoItem Load (0.0ms)[0m   [0;1mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 5)) [0m
+Rendered todo_items/_todo_item (109.0ms)
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 4)) [0m
+Rendered todo_items/_todo_item (16.0ms)
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 3)) [0m
+Rendered todo_items/_todo_item (31.0ms)
+Completed in 219ms (View: 172, DB: 0) | 200 OK [http://localhost/?tags=Ruby]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-22 20:23:53) [GET]
+  Parameters: {"tags"=>"Ruby"}
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT * FROM "tags" WHERE ("tags"."name" = 'Ruby') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+  [4;35;1mTodoItem Load (0.0ms)[0m   [0mSELECT "todo_items".* FROM "todo_items" INNER JOIN "todo_item_tags" ON "todo_items".id = "todo_item_tags".todo_item_id WHERE (("todo_item_tags".tag_id = 2)) [0m
+Completed in 156ms (View: 16, DB: 0) | 200 OK [http://localhost/?tags=Ruby]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-22 20:24:00) [GET]
+  [4;36;1mTodoItem Load (0.0ms)[0m   [0;1mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 5)) [0m
+Rendered todo_items/_todo_item (249.0ms)
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 4)) [0m
+Rendered todo_items/_todo_item (16.0ms)
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 3)) [0m
+Rendered todo_items/_todo_item (31.0ms)
+Completed in 374ms (View: 327, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-22 20:24:05) [GET]
+  Parameters: {"tags"=>"Ruby"}
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT * FROM "tags" WHERE ("tags"."name" = 'Ruby') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+  [4;35;1mTodoItem Load (0.0ms)[0m   [0mSELECT "todo_items".* FROM "todo_items" INNER JOIN "todo_item_tags" ON "todo_items".id = "todo_item_tags".todo_item_id WHERE (("todo_item_tags".tag_id = 2)) [0m
+Completed in 156ms (View: 15, DB: 0) | 200 OK [http://localhost/?tags=Ruby]
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT * FROM "tags" WHERE ("tags"."name" = 'Ruby') LIMIT 1[0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT * FROM "tags" WHERE ("tags"."name" = 'Ruby') LIMIT 1[0m
+  [4;36;1mTodoItem Load (0.0ms)[0m   [0;1mSELECT "todo_items".* FROM "todo_items" INNER JOIN "todo_item_tags" ON "todo_items".id = "todo_item_tags".todo_item_id WHERE (("todo_item_tags".tag_id = 2)) [0m
+  [4;35;1mTodoItemTag Load (0.0ms)[0m   [0mSELECT * FROM "todo_item_tags" [0m
+  [4;36;1mTag Delete all (187.0ms)[0m   [0;1mDELETE FROM "tags" WHERE ("id" IN (5)) [0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT * FROM "tags" [0m
+  [4;36;1mTodoItemTag Load (0.0ms)[0m   [0;1mSELECT * FROM "todo_item_tags" [0m
+  [4;35;1mTodoItemTag Load (0.0ms)[0m   [0mSELECT * FROM "todo_item_tags" [0m
+  [4;36;1mTodoItemTag Load (0.0ms)[0m   [0;1mSELECT * FROM "todo_item_tags" LIMIT 1[0m
+  [4;35;1mTodoItemTag Update (15.0ms)[0m   [0mUPDATE "todo_item_tags" SET "updated_at" = '2010-04-22 10:26:03', "tag_id" = 2 WHERE "id" = 1[0m
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-22 20:26:10) [GET]
+  [4;36;1mTodoItem Load (15.0ms)[0m   [0;1mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 5)) [0m
+Rendered todo_items/_todo_item (109.0ms)
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 4)) [0m
+Rendered todo_items/_todo_item (16.0ms)
+  [4;35;1mTag Load (16.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 3)) [0m
+Rendered todo_items/_todo_item (31.0ms)
+Completed in 234ms (View: 156, DB: 31) | 200 OK [http://localhost/]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-22 20:26:15) [GET]
+  Parameters: {"tags"=>"Ruby"}
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT * FROM "tags" WHERE ("tags"."name" = 'Ruby') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+  [4;35;1mTodoItem Load (0.0ms)[0m   [0mSELECT "todo_items".* FROM "todo_items" INNER JOIN "todo_item_tags" ON "todo_items".id = "todo_item_tags".todo_item_id WHERE (("todo_item_tags".tag_id = 2)) [0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 3)) [0m
+Rendered todo_items/_todo_item (31.0ms)
+Completed in 187ms (View: 47, DB: 0) | 200 OK [http://localhost/?tags=Ruby]

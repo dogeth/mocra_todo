@@ -1,7 +1,12 @@
 class TodoItemsController < ApplicationController
 	def index
 		@todoItem = TodoItem.new
-		@todoItems = TodoItem.all( :order => "created_at desc" )
+		if params[:tags]
+			@tag = Tag.find_by_name( params[ :tags ] )
+			@todoItems = @tag.todo_items
+		else
+			@todoItems = TodoItem.all( :order => "created_at desc" )
+		end
 	end
 	
 	def create
