@@ -5,9 +5,9 @@
 	%h4 New Item
 	%p
 		-form_for :todo_item, @todoItem, :url => { :action => "create" } do |f| 
-			= f.text_field :tag_name 
+			= f.text_field :title, { :class => 'title' }
 			= hidden_field_tag :tag, { :value => @tag.tag_id } if @tag 
-			= submit_tag 'Add' 
+			= submit_tag 'Add', { :class => 'submit' }
 
 #list
 	%ul.items
