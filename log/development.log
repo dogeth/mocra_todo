@@ -1342,3 +1342,34 @@ Rendered todo_items/_todo_item (24.0ms)
 Rendered todo_items/_todo_item (19.0ms)
 Rendered todo_items/_todo_item (24.0ms)
 Completed in 148ms (View: 92, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTodoItems (20100415091134)
+Migrating to CreateTags (20100422093823)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (62.0ms)[0m   [0mCREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100422093823')[0m
+Migrating to CreateTodoItemTags (20100422094101)
+  [4;35;1mSQL (0.0ms)[0m   [0mCREATE TABLE "todo_item_tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tag_id" integer, "todo_item_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE INDEX "index_todo_item_tags_on_tag_id" ON "todo_item_tags" ("tag_id")[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mCREATE INDEX "index_todo_item_tags_on_todo_item_id" ON "todo_item_tags" ("todo_item_id")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE INDEX "index_todo_item_tags_on_tag_id_and_todo_item_id" ON "todo_item_tags" ("tag_id", "todo_item_id")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100422094101')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("tags")[0m
+  [4;36;1mSQL (15.0ms)[0m   [0;1mPRAGMA index_list("todo_item_tags")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_info('index_todo_item_tags_on_tag_id_and_todo_item_id')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_info('index_todo_item_tags_on_todo_item_id')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_info('index_todo_item_tags_on_tag_id')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("todo_items")[0m
