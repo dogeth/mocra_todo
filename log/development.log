@@ -1684,3 +1684,114 @@ Rendering todo_items/index
   [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 3)) [0m
 Rendered todo_items/_todo_item (31.0ms)
 Completed in 187ms (View: 47, DB: 0) | 200 OK [http://localhost/?tags=Ruby]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-22 20:30:44) [GET]
+  Parameters: {"tags"=>"Ruby"}
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT * FROM "tags" WHERE ("tags"."name" = 'Ruby') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+  [4;36;1mTodoItem Load (0.0ms)[0m   [0;1mSELECT "todo_items".* FROM "todo_items" INNER JOIN "todo_item_tags" ON "todo_items".id = "todo_item_tags".todo_item_id WHERE (("todo_item_tags".tag_id = 2)) [0m
+
+ActionView::TemplateError (Missing template todo_items/_todo_item.erb in view path app/views) on line #11 of app/views/todo_items/index.html.erb:
+8: </p>
+9: 
+10: <ul class="items">
+11: <%= render @todoItems %>
+12: </ul>
+
+    app/views/todo_items/index.html.erb:11
+
+Rendered rescues/_trace (327.0ms)
+Rendered rescues/_request_and_response (16.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-22 20:31:05) [GET]
+  Parameters: {"tags"=>"Ruby"}
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT * FROM "tags" WHERE ("tags"."name" = 'Ruby') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+  [4;36;1mTodoItem Load (0.0ms)[0m   [0;1mSELECT "todo_items".* FROM "todo_items" INNER JOIN "todo_item_tags" ON "todo_items".id = "todo_item_tags".todo_item_id WHERE (("todo_item_tags".tag_id = 2)) [0m
+
+ActionView::TemplateError (undefined local variable or method `item' for #<ActionView::Base:0x7f23e270>) on line #15 of app/views/todo_items/_todo_item.html.erb:
+12: 	<% else %>
+13: 		<%= link_to "[Done]", done_todo_item_path(todo_item), :method => :put %>
+14: 	<% end %>
+15: 	<%= item.tags.map { |tag| link_to(tag.name, root_path(:tags => tag.name)) }.join( ', ' ) %>
+16: </li>
+
+    app/views/todo_items/_todo_item.html.erb:15
+    app/views/todo_items/index.html.erb:11
+
+Rendered rescues/_trace (265.0ms)
+Rendered rescues/_request_and_response (15.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-22 20:31:16) [GET]
+  Parameters: {"tags"=>"Ruby"}
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT * FROM "tags" WHERE ("tags"."name" = 'Ruby') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+  [4;36;1mTodoItem Load (0.0ms)[0m   [0;1mSELECT "todo_items".* FROM "todo_items" INNER JOIN "todo_item_tags" ON "todo_items".id = "todo_item_tags".todo_item_id WHERE (("todo_item_tags".tag_id = 2)) [0m
+
+ActionView::TemplateError (undefined local variable or method `item' for #<ActionView::Base:0x7f334cb0>) on line #15 of app/views/todo_items/_todo_item.html.erb:
+12: 	<% else %>
+13: 		<%= link_to "[Done]", done_todo_item_path(todo_item), :method => :put %>
+14: 	<% end %>
+15: 	<%= item.tags.map { |tag| link_to(tag.name, root_path(:tags => tag.name)) }.join( ', ' ) %>
+16: </li>
+
+    app/views/todo_items/_todo_item.html.erb:15
+    app/views/todo_items/index.html.erb:11
+
+Rendered rescues/_trace (203.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-22 20:31:27) [GET]
+  Parameters: {"tags"=>"Ruby"}
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT * FROM "tags" WHERE ("tags"."name" = 'Ruby') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+  [4;36;1mTodoItem Load (0.0ms)[0m   [0;1mSELECT "todo_items".* FROM "todo_items" INNER JOIN "todo_item_tags" ON "todo_items".id = "todo_item_tags".todo_item_id WHERE (("todo_item_tags".tag_id = 2)) [0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 3)) [0m
+Rendered todo_items/_todo_item (31.0ms)
+Completed in 203ms (View: 63, DB: 0) | 200 OK [http://localhost/?tags=Ruby]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-22 20:33:01) [GET]
+  Parameters: {"tags"=>"Ruby"}
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT * FROM "tags" WHERE ("tags"."name" = 'Ruby') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+  [4;35;1mTodoItem Load (0.0ms)[0m   [0mSELECT "todo_items".* FROM "todo_items" INNER JOIN "todo_item_tags" ON "todo_items".id = "todo_item_tags".todo_item_id WHERE (("todo_item_tags".tag_id = 2)) [0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 3)) [0m
+Rendered todo_items/_todo_item (15.0ms)
+Completed in 202ms (View: 62, DB: 0) | 200 OK [http://localhost/?tags=Ruby]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-22 20:33:17) [GET]
+  Parameters: {"tags"=>"Ruby"}
+  [4;35;1mTag Load (15.0ms)[0m   [0mSELECT * FROM "tags" WHERE ("tags"."name" = 'Ruby') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+  [4;36;1mTodoItem Load (0.0ms)[0m   [0;1mSELECT "todo_items".* FROM "todo_items" INNER JOIN "todo_item_tags" ON "todo_items".id = "todo_item_tags".todo_item_id WHERE (("todo_item_tags".tag_id = 2)) [0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 3)) [0m
+Rendered todo_items/_todo_item (32.0ms)
+Completed in 219ms (View: 78, DB: 15) | 200 OK [http://localhost/?tags=Ruby]
+
+
+Processing TodoItemsController#index (for 127.0.0.1 at 2010-04-22 20:33:23) [GET]
+  [4;36;1mTodoItem Load (0.0ms)[0m   [0;1mSELECT * FROM "todo_items" ORDER BY created_at desc[0m
+Rendering template within layouts/application
+Rendering todo_items/index
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 5)) [0m
+Rendered todo_items/_todo_item (109.0ms)
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 4)) [0m
+Rendered todo_items/_todo_item (16.0ms)
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "todo_item_tags" ON "tags".id = "todo_item_tags".tag_id WHERE (("todo_item_tags".todo_item_id = 3)) [0m
+Rendered todo_items/_todo_item (16.0ms)
+Completed in 250ms (View: 188, DB: 0) | 200 OK [http://localhost/]
