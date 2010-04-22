@@ -4,7 +4,7 @@
 <li class="outstanding">
 <%end%>
 	<input type="checkbox" id="item<%= todo_item.id %>_done" <%= "checked" if todo_item.done? %>/>
-	<%= todo_item.title %> 
+	<%= link_to todo_item.title, todo_item %> 
 	<%= link_to "[Delete]", todo_item, :method => :delete, 
 			:confirm => "Are you sure you want to delete this item?" %>	
 	<% if todo_item.done? %>

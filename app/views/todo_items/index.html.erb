@@ -2,7 +2,8 @@
 
 <p>
 <% form_for :todo_item, @todoItem, :url => { :action => "create" } do |f| %>
-  <%= f.text_field :title %>
+  <%= f.text_field :tag_name %>
+  <%= hidden_field_tag :tag, { :value => @tag.tag_id } if @tag %>
   <%= submit_tag 'Add' %>
 <% end %>
 </p>
