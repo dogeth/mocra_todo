@@ -43,14 +43,18 @@ class TodoItemsController < ApplicationController
 		update_item{ @todo_item.done = false }
 	end
 
+	def update_tags		
+		update_item do
+			tags = params[ :tags ].split(',').map{ |s| s.strip }.map{ |s| Tag.find_or_create_by_name( s ) }
+			@todo_item.tags = tags
+		end
+	end
+
 	private
 		def update_item
 			@todo_item = TodoItem.find( params[ :id ] )
 			yield
 			@todo_item.save!
-			respond_to do |format|
-				format.html { redirect_to root_path }
-				format.js
-			end			
+			redirect_to  request.env['HTTP_REFERER']
 		end
 end

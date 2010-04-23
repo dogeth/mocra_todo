@@ -5,7 +5,7 @@
 
 %li{ :id => item_id }
 	%span{ :class => item_class }
-		= todo_item.title
+		= link_to todo_item.title, todo_item
 	= button_to "Done", done_todo_item_path( todo_item ) if !todo_item.done
-	= button_to "Undo", undo_todo_item_path( todo_item ), :action => :undo if todo_item.done
-	= button_to "Delete", todo_item_path( todo_item ), :action => :delete, :confirm => "Are you sure you want to delete this item?"
+	= button_to "Undo", undo_todo_item_path( todo_item ) if todo_item.done
+	= button_to "Delete", todo_item_path( todo_item ), :confirm => "Are you sure you want to delete this item?"

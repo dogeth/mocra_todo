@@ -1,0 +1,13 @@
+#item
+	%p
+		= @todo_item.title		
+		
+	%form{ :action => update_tags_todo_item_path( @todo_item ), :method => 'post' }
+		%label{ :for => 'tags' } Tags:
+		%input{ :type => 'text', :name => 'tags', :id => 'tags', :value => @todo_item.tags.map{ |t| t.name }.join( ', ' ) }
+		%input{ :type => 'submit', :name => 'submit', :value => 'save' }
+		%input{ :type => 'hidden', :name => 'authenticity_token', :value => form_authenticity_token }
+	
+	%br
+	= button_to "Done", done_todo_item_path( @todo_item ) if !@todo_item.done
+	= button_to "Undo", undo_todo_item_path( @todo_item ) if @todo_item.done

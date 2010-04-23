@@ -1,11 +1,15 @@
-%html
+!!! XML
+!!!
+%html{ :xmlns => 'http://www.w3.org/1999/xhtml' }
 	%head
 		%title ToDo
+		%meta{ 'http-equiv' => 'Content-Type', 'content' => 'text/html;charset=utf-8' }
 		= stylesheet_link_tag 'application'
 		= javascript_include_tag :defaults 
 	%body
 		#header
-			%h1 Todo
+			%h1
+				= link_to "Todo", root_path
 		#container
 			%p#notice= flash[:notice]
 			= yield
