@@ -3,9 +3,13 @@
 
 #list
   %ul#cloud
-    -@tags.each do |tag|
-      %li= link_to tag.name, root_path(:tags => tag.name)
-    
+  
+:javascript
+  $.getJSON('/tags.js', function (tags) {
+    $.each(tags, function (index, tag) {
+      $('#cloud').append($('<li />').html(tag.tag.name));
+    });
+  });
 #add
   %h4 New Item
   %p
