@@ -1,7 +1,6 @@
 class TodoItemsController < ApplicationController
 	def index
-		if params[:tags]
-			@tag = Tag.find_by_name( params[ :tags ] )
+		if params[:tags] && @tag = Tag.find_by_name( params[ :tags ] )
 			@todoItems = @tag.todo_items
 		else
 			@todoItems = TodoItem.all( :order => "created_at desc" )
@@ -13,10 +12,9 @@ class TodoItemsController < ApplicationController
 		@todoItem = TodoItem.new( params[ :todo_item ] )
 		if params[ :tag ]			
 			@tag = Tag.find( params[ :tag ] )
-			@todoItem << @tag
+			@todoItem.tags << @tag
 		end
 			
-		@todoItem.done = false
 		if @todoItem.save!
 			redirect_to root_path
 		else

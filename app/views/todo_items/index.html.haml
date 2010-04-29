@@ -6,7 +6,7 @@
 	%p
 		-form_for :todo_item, @todoItem, :url => { :action => "create" } do |f| 
 			= f.text_field :title, { :class => 'title' }
-			= hidden_field_tag :tag, { :value => @tag.tag_id } if @tag 
+			= hidden_field_tag :tag, @tag.id if @tag 
 			= submit_tag 'Add', { :class => 'submit' }
 
 #list
