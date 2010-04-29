@@ -1,93 +1,93 @@
 =rounded
-	border-radius: 5px
-	-moz-border-radius: 5px
-	-webkit-border-raidus: 5px
+  border-radius: 5px
+  -moz-border-radius: 5px
+  -webkit-border-raidus: 5px
 
 @font-face
-	font-family: 'MolotRegular'
-	src: url('/fonts/Molot.eot')
-	src: local('☺'), url('/fonts/Molot.ttf') format('truetype'), url('/fonts/Molot.svg#webfont') format('svg')
+  font-family: 'MolotRegular'
+  src: url('/fonts/Molot.eot')
+  src: local('☺'), url('/fonts/Molot.ttf') format('truetype'), url('/fonts/Molot.svg#webfont') format('svg')
 
 @font-face
-	font-family: 'CartoGothicStdBook'
-	src: url('/fonts/CartoGothicStd-Book.eot')
-	src: local('☺'), url('/fonts/CartoGothicStd-Book.ttf') format('truetype'), url('/fonts/CartoGothicStd-Book.svg#webfont') format('svg')
+  font-family: 'CartoGothicStdBook'
+  src: url('/fonts/CartoGothicStd-Book.eot')
+  src: local('☺'), url('/fonts/CartoGothicStd-Book.ttf') format('truetype'), url('/fonts/CartoGothicStd-Book.svg#webfont') format('svg')
 
 @font-face
-	font-family: 'CartoGothicStdItalic'
-	src: url('/fonts/CartoGothicStd-Italic.eot')
-	src: local('☺'), url('/fonts/CartoGothicStd-Italic.ttf') format('truetype'), url('/fonts/CartoGothicStd-Italic.svg#webfont') format('svg')
+  font-family: 'CartoGothicStdItalic'
+  src: url('/fonts/CartoGothicStd-Italic.eot')
+  src: local('☺'), url('/fonts/CartoGothicStd-Italic.ttf') format('truetype'), url('/fonts/CartoGothicStd-Italic.svg#webfont') format('svg')
 
 @font-face
-	font-family: 'CartoGothicStdBold'
-	src: url('/fonts/CartoGothicStd-Bold.eot')
-	src: local('☺'), url('/fonts/CartoGothicStd-Bold.ttf') format('truetype'), url('/fonts/CartoGothicStd-Bold.svg#webfont') format('svg')
+  font-family: 'CartoGothicStdBold'
+  src: url('/fonts/CartoGothicStd-Bold.eot')
+  src: local('☺'), url('/fonts/CartoGothicStd-Bold.ttf') format('truetype'), url('/fonts/CartoGothicStd-Bold.svg#webfont') format('svg')
 
 @font-face
-	font-family: 'CartoGothicStdBoldItalic'
-	src: url('/fonts/CartoGothicStd-BoldItalic.eot')
-	src: local('☺'), url('/fonts/CartoGothicStd-BoldItalic.ttf') format('truetype'), url('/fonts/CartoGothicStd-BoldItalic.svg#webfont') format('svg')
+  font-family: 'CartoGothicStdBoldItalic'
+  src: url('/fonts/CartoGothicStd-BoldItalic.eot')
+  src: local('☺'), url('/fonts/CartoGothicStd-BoldItalic.ttf') format('truetype'), url('/fonts/CartoGothicStd-BoldItalic.svg#webfont') format('svg')
 
 =title_style
-	font: 60px/68px 'MolotRegular', Arial, sans-serif
-	letter-spacing: 0
-	color: #fff6bf
+  font: 60px/68px 'MolotRegular', Arial, sans-serif
+  letter-spacing: 0
+  color: #fff6bf
 
 .done
-	text-decoration: line-through
-	
+  text-decoration: line-through
+  
 body
-	margin: 0px
-	background-color: #725f54
-	
+  margin: 0px
+  background-color: #725f54
+  
 #header
-	background-image: url('/images/header-background.png')
-	background-color: #33898A
-	margin: 0px
-	padding-left: 20px
-	height: 75px
-	overflow: clip
-	
-	h1
-		a
-			+title_style
-			text-decoration: none
+  background-image: url('/images/header-background.png')
+  background-color: #33898A
+  margin: 0px
+  padding-left: 20px
+  height: 75px
+  overflow: clip
+  
+  h1
+    a
+      +title_style
+      text-decoration: none
 
 =body_item
-	padding: 5px
-	margin: 20px
-	width: 50%
-	background-color: #FFFDF2
-	
+  padding: 5px
+  margin: 20px
+  width: 50%
+  background-color: #FFFDF2
+  
 #container
-	#add
-		+body_item
-		+rounded
-		padding-bottom: 20px
-		
-		h4
-			color: #332A25
-			font-family: 'CartoGothicStdBook', Arial, sans-serif
-			margin: 0
-			padding: 0
-		
-		input.title
-			width: 100%
-			
-		input.submit
-			float: right
+  #add
+    +body_item
+    +rounded
+    padding-bottom: 20px
+    
+    h4
+      color: #332A25
+      font-family: 'CartoGothicStdBook', Arial, sans-serif
+      margin: 0
+      padding: 0
+    
+    input.title
+      width: 100%
+      
+    input.submit
+      float: right
 
-	#list
-		+body_item
-		+rounded
-		
-	#item
-		+body_item
-		+rounded
+  #list
+    +body_item
+    +rounded
+    
+  #item
+    +body_item
+    +rounded
 
 ul.items
-	li
-		form
-			display: inline
-		div
-			display: inline
+  li
+    form
+      display: inline
+    div
+      display: inline

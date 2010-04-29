@@ -3,26 +3,26 @@
 
 
 @font-face {
-	font-family: 'CartoGothicStdBook';
-	src: url('CartoGothicStd-Book.eot');
-	src: local('☺'), url('CartoGothicStd-Book.ttf') format('truetype'), url('CartoGothicStd-Book.svg#webfont') format('svg');
+  font-family: 'CartoGothicStdBook';
+  src: url('CartoGothicStd-Book.eot');
+  src: local('☺'), url('CartoGothicStd-Book.ttf') format('truetype'), url('CartoGothicStd-Book.svg#webfont') format('svg');
 }
 
 @font-face {
-	font-family: 'CartoGothicStdItalic';
-	src: url('CartoGothicStd-Italic.eot');
-	src: local('☺'), url('CartoGothicStd-Italic.ttf') format('truetype'), url('CartoGothicStd-Italic.svg#webfont') format('svg');
+  font-family: 'CartoGothicStdItalic';
+  src: url('CartoGothicStd-Italic.eot');
+  src: local('☺'), url('CartoGothicStd-Italic.ttf') format('truetype'), url('CartoGothicStd-Italic.svg#webfont') format('svg');
 }
 
 @font-face {
-	font-family: 'CartoGothicStdBold';
-	src: url('CartoGothicStd-Bold.eot');
-	src: local('☺'), url('CartoGothicStd-Bold.ttf') format('truetype'), url('CartoGothicStd-Bold.svg#webfont') format('svg');
+  font-family: 'CartoGothicStdBold';
+  src: url('CartoGothicStd-Bold.eot');
+  src: local('☺'), url('CartoGothicStd-Bold.ttf') format('truetype'), url('CartoGothicStd-Bold.svg#webfont') format('svg');
 }
 
 @font-face {
-	font-family: 'CartoGothicStdBoldItalic';
-	src: url('CartoGothicStd-BoldItalic.eot');
-	src: local('☺'), url('CartoGothicStd-BoldItalic.ttf') format('truetype'), url('CartoGothicStd-BoldItalic.svg#webfont') format('svg');
+  font-family: 'CartoGothicStdBoldItalic';
+  src: url('CartoGothicStd-BoldItalic.eot');
+  src: local('☺'), url('CartoGothicStd-BoldItalic.ttf') format('truetype'), url('CartoGothicStd-BoldItalic.svg#webfont') format('svg');
 }
 
