@@ -7,6 +7,12 @@ class TodoItemsController < ApplicationController
       @todoItems = TodoItem.all( :order => "created_at desc" )
     end
     @TodoItem = TodoItem.new
+    
+    respond_to do |wants|
+      wants.html { }
+      wants.js { render :json => @todoItems.to_json(:include => :tags) }
+      wants.xml { render :xml => @todoItems.to_xml(:include => :tags) }
+    end
   end
   
   def create
