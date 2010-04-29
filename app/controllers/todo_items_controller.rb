@@ -1,5 +1,6 @@
 class TodoItemsController < ApplicationController
   def index
+    @tags = Tag.all
     if params[:tags] && @tag = Tag.find_by_name( params[ :tags ] )
       @todoItems = @tag.todo_items
     else

@@ -1,6 +1,11 @@
 -if @tag
   %h2= ": #{@tag.name}"
 
+#list
+  %ul#cloud
+    -@tags.each do |tag|
+      %li= link_to tag.name, root_path(:tags => tag.name)
+    
 #add
   %h4 New Item
   %p
