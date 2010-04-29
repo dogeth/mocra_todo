@@ -4,6 +4,8 @@ ActionController::Routing::Routes.draw do |map|
       :undo => :post,
       :update_tags => :post
     }
+    
+  map.resources :tags
 
   map.root :controller => "todo_items", :action => "index"
 
